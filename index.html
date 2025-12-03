@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>桃花遊 — 一頁式活動頁</title>
+  <style>
+    :root{
+      --yellow:#ffcf2f;
+      --dark:#111;
+      --muted:#666;
+      --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    body{font-family: 'Noto Sans TC', sans-serif;margin:0;color:var(--dark);background:#fafafa}
+    .container{max-width:var(--maxw);margin:0 auto;padding:20px}
+
+    /* hero */
+    .hero{position:relative;height:520px;display:flex;align-items:flex-start;justify-content:space-between;overflow:hidden;border-radius:6px}
+    .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:contrast(1.02) brightness(0.95)}
+    .hero .overlay{position:relative;z-index:2;display:flex;flex-direction:column;padding:28px 36px;color:#fff;width:100%;}
+    .brand{display:flex;justify-content:space-between;align-items:center}
+    .brand h1{margin:0;font-size:28px;font-weight:700}
+    .tag{background:var(--yellow);color:#111;padding:6px 12px;border-radius:24px;font-weight:700}
+
+    .hero .center{margin-top:auto;margin-bottom:auto;text-align:center}
+    .hero h2{font-size:42px;margin:6px 0 10px;letter-spacing:1px;text-shadow:0 2px 12px rgba(0,0,0,0.45)}
+    .hero p.lead{font-size:18px;margin:0 0 14px;text-shadow:0 1px 6px rgba(0,0,0,0.45)}
+    .cta{display:inline-block;background:var(--yellow);color:var(--dark);padding:12px 20px;border-radius:8px;font-weight:700;text-decoration:none}
+
+    /* grid of promos */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+    .card{background:rgba(255,255,255,0.9);padding:12px;border-radius:6px;display:flex;flex-direction:column;min-height:110px}
+    .card.small{min-height:80px}
+    .card h3{margin:0 0 6px;font-size:16px}
+    .price{background:var(--yellow);padding:6px 10px;border-radius:6px;font-weight:800;display:inline-block}
+
+    /* itinerary */
+    .itinerary{margin:34px 0;padding:18px;background:white;border-radius:8px}
+    .itinerary h3{margin-top:0}
+    .times{display:flex;gap:10px;flex-wrap:wrap}
+    .time{flex:1 1 120px;padding:10px;border-radius:6px;background:#fff8e6;border:1px solid rgba(0,0,0,0.05);text-align:center}
+
+    /* gallery */
+    .gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+    .gallery img{width:100%;height:220px;object-fit:cover;border-radius:6px}
+
+    footer{margin-top:22px;padding:18px;text-align:center;color:var(--muted)}
+
+    /* responsive */
+    @media(max-width:900px){
+      .hero{height:420px}
+      .grid{grid-template-columns:1fr 1fr}
+      .gallery{grid-template-columns:1fr}
+      .hero h2{font-size:28px}
+    }
+    @media(max-width:520px){
+      .hero{height:360px}
+      .brand h1{font-size:18px}
+      .hero h2{font-size:22px}
+      .grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- HERO: 將下方 img 的 src 換成你的圖片檔名（例如 1000019523.jpg 或 hero.jpg） -->
+    <section class="hero" aria-label="主視覺">
+      <img src="./1000019523.jpg" alt="桃花遊主視覺" />
+      <div class="overlay">
+        <div class="brand">
+          <div>
+            <h1>桃花遊</h1>
+            <div style="font-size:13px;color:rgba(255,255,255,0.9)">小京都 — 台版撒哈拉</div>
+          </div>
+          <div class="tag">限時優惠</div>
+        </div>
+
+        <div class="center">
+          <h2>【桃花遊】你的週末不用選擇困難！</h2>
+          <p class="lead">一天內從「小京都」到「台版撒哈拉」的超值旅行，三人同行一人免費！</p>
+          <a class="cta" href="#itinerary">立即預訂 $1400 起</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROMO GRID -->
+    <section class="grid" aria-label="促銷資訊">
+      <div class="card">
+        <h3>小京都走訪</h3>
+        <p class="muted">穿越時空｜日式氛圍</p>
+      </div>
+      <div class="card">
+        <h3>荒野秘境</h3>
+        <p class="muted">手機拍照打卡熱點</p>
+      </div>
+      <div class="card">
+        <h3>饗食體驗</h3>
+        <p class="muted">質感餐點｜網美甜品</p>
+      </div>
+    </section>
+
+    <!-- ITINERARY -->
+    <section class="itinerary" id="itinerary" aria-label="行程表">
+      <h3>行程安排（範例）</h3>
+      <div class="times">
+        <div class="time">10:30 — 集合出發</div>
+        <div class="time">11:30 — 桃園神社</div>
+        <div class="time">14:00 — 觀音草原</div>
+        <div class="time">15:30 — 季風沙丘</div>
+        <div class="time">18:30 — 夏夕景賞</div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section>
+      <h3>更多景點</h3>
+      <div class="gallery">
+        <img src="./1000019523.jpg" alt="景點 1" />
+        <img src="./1000019523.jpg" alt="景點 2" />
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section style="margin-top:20px;background:white;padding:16px;border-radius:8px">
+      <h3>聯絡我們</h3>
+      <p>電子郵件：travel@example.com | 電話：0912-345-678</p>
+      <p style="font-size:13px;color:var(--muted)">欲在 GitHub Pages 上部署：請將本頁面的所有檔案與圖片上傳到 repository 的根目錄（或 assets 資料夾），確保圖片檔名與 HTML 中的路徑一致。</p>
+    </section>
+
+    <footer>
+      © 2025 桃花遊 • 製作示範
+    </footer>
+  </div>
+</body>
+</html>
